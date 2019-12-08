@@ -1,0 +1,4 @@
+Bernoulli Naive Bayes:
+Resultado: 0.8612
+Tempo de treinamento: 30.1442940235s
+Tempo de classificacao: 0.234595060349s

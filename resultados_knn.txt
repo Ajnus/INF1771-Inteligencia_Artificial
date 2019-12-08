@@ -1,0 +1,4 @@
+KNN:
+Resultado: 0.6806
+Tempo de treinamento: 43.1881270409s
+Tempo de classificacao: 147.297720909s
