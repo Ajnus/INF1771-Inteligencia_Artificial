@@ -2,9 +2,7 @@ import pandas as pd
 import time
 from sklearn.preprocessing import StandardScaler
 from sklearn import tree
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
-from sklearn import tree
 
 #Read the Training and Testing Data:
 data_train = pd.read_csv(filepath_or_buffer="poker-hand-training-true.data", sep=',', header=None)
