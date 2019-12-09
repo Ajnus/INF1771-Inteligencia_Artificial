@@ -1,7 +1,8 @@
 import pandas as pd
 import time
-from sklearn.preprocessing import StandardScaler
+#from sklearn.preprocessing import StandardScaler
 from sklearn import tree
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
 #Read the Training and Testing Data:
@@ -23,7 +24,8 @@ data_test = array_test[:,0:10]
 label_test = array_test[:,10]
 
 trainingStartTime = time.time()
-
+#print(trainingStartTime)
+'''
 # Scaling the Data for our Main Model
 # Scale the Data to Make the NN easier to converge
 scaler = StandardScaler()
@@ -32,13 +34,23 @@ scaler.fit(data_train)
 # Transform the training and testing data
 data_train = scaler.transform(data_train)
 data_test = scaler.transform(data_test)
-
+'''
 # Init the Models for Comparision
-model = tree.DecisionTreeClassifier()
+'''
+def fit_decision_tree(class_name, criter, fitdata, maxd):
+    
+    X=fitdata[features]
+    Y = fitdata[class_name]
+    model_to_fit=DecisionTreeClassifier(max_depth=maxd, criterion=criter)
+    return model_to_fit.fit(X,Y)
+'''
+model = DecisionTreeClassifier(max_depth=5, criterion='entropy')
+print(model)
 name = "Decision Tree"
 
 model.fit(data_train, label_train)
 trainingTime = time.time() - trainingStartTime
+#print(time.time())
 
 runningStartTime = time.time()
 #Predict
@@ -48,5 +60,5 @@ runningTime = time.time() - runningStartTime
 # Print Accuracy
 acc = accuracy_score(label_test, prediction)
 print("Accuracy Using",name,": " + str(acc)+'\n')
-print("Tempo de treinamento: " + str(trainingTime) + "s")
-print("Tempo de classificação: " + str(runningTime) + "s")    
+print("Tempo de treinamento: " + str(trainingTime) + ' segundos')
+print("Tempo de classificação: " + str(runningTime) + ' segundos')    

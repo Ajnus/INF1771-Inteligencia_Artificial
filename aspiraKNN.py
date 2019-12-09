@@ -1,7 +1,6 @@
 import pandas as pd
 import time
 from sklearn.preprocessing import StandardScaler
-from sklearn import tree
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
@@ -24,7 +23,7 @@ data_test = array_test[:,0:10]
 label_test = array_test[:,10]
 
 trainingStartTime = time.time()
-
+'''
 # Scaling the Data for our Main Model
 # Scale the Data to Make the NN easier to converge
 scaler = StandardScaler()
@@ -33,9 +32,9 @@ scaler.fit(data_train)
 # Transform the training and testing data
 data_train = scaler.transform(data_train)
 data_test = scaler.transform(data_test)
-
+'''
 # Init the Models for Comparision
-model = KNeighborsClassifier(n_neighbors=5)
+model = KNeighborsClassifier(n_neighbors = 5)
 name = "KNN"
 
 model.fit(data_train, label_train)
@@ -49,5 +48,5 @@ runningTime = time.time() - runningStartTime
 # Print Accuracy
 acc = accuracy_score(label_test, prediction)
 print("Accuracy Using",name,": " + str(acc)+'\n')
-print("Tempo de treinamento: " + str(trainingTime) + "s")
-print("Tempo de classificação: " + str(runningTime) + "s")    
+print("Tempo de treinamento: " + str(trainingTime) + ' segundos')
+print("Tempo de classificação: " + str(runningTime) + ' segundos')    
