@@ -4,6 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import tree
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
+from sklearn import tree
 
 #Read the Training and Testing Data:
 data_train = pd.read_csv(filepath_or_buffer="poker-hand-training-true.data", sep=',', header=None)
@@ -35,8 +36,8 @@ data_train = scaler.transform(data_train)
 data_test = scaler.transform(data_test)
 
 # Init the Models for Comparision
-model = KNeighborsClassifier(n_neighbors=5)
-name = "KNN"
+model = tree.DecisionTreeClassifier()
+name = "Decision Tree"
 
 model.fit(data_train, label_train)
 trainingTime = time.time() - trainingStartTime
