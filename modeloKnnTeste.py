@@ -46,7 +46,7 @@ while(size > 0):
         accMax = acc
     k = str(k)
     acc = str(acc)
-    print "Resultado: " + k + " - " + acc
+    print ("Resultado: " + k + " - " + acc)
     size = size - 1
     resultado = "K: " + k + " - " + acc + "\n"
     file.write(resultado)
