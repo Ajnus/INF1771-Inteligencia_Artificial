@@ -1,3 +1,3 @@
-# INF1771 Inteligência Artificial 
+# INF1771 - Inteligência Artificial 
 
 T2-IA
